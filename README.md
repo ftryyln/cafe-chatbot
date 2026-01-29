@@ -2,6 +2,8 @@
 
 A full-stack bilingual (English/Vietnamese) chatbot application for a café, powered by Google's Gemini AI.
 
+![Chatbot UI](chatbot.png)
+
 ## 📋 Project Structure
 
 ```
