@@ -1,7 +1,7 @@
 {
   "name": "cafe-chatbot-backend",
   "version": "1.0.0",
-  "description": "Backend API for Gemini Cafe Chatbot",
+  "description": "Elite Backend API for Gemini Cafe Chatbot by Fitry Yuliani",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
     "cafe",
     "api"
   ],
-  "author": "",
+  "author": "Fitry Yuliani",
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
