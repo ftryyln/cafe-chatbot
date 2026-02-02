@@ -1,207 +1,136 @@
-# 🤖 Gemini Cafe Chatbot
+# 🤖 Gemini Cafe Chatbot: AI-Powered Concierge
 
-A full-stack bilingual (English/Vietnamese) chatbot application for a café, powered by Google's Gemini AI.
+<p align="center">
+  <strong>An elite, full-stack bilingual AI concierge for premium hospitality</strong><br>
+  Engineered with Gemini 2.5 Flash, React, Node.js, and Modern Motion Design
+</p>
 
-![Chatbot UI](chatbot.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/AI-Gemini_2.5_Flash-FF6F61?style=for-the-badge&logo=google-gemini" alt="Gemini AI">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js" alt="Node.js">
+  <img src="https://img.shields.io/badge/Styling-Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind">
+  <img src="https://img.shields.io/badge/UX-Bilingual_EN/VI-Cyan?style=for-the-badge" alt="Bilingual">
+</p>
 
-## 📋 Project Structure
+---
 
+## 📝 Project Mission
+
+**Gemini Cafe Chatbot** is a state-of-the-art hospitality assistant designed to transform customer interactions. This project serves as a showcase of **Advanced AI Integration**, demonstrating:
+
+- **🧠 Intelligent Context Awareness**: Powered by **Gemini 2.5 Flash**, the bot maintains a deep understanding of conversation history to provide relevant, context-rich assistance.
+- **🌐 Seamless Bilingualism**: Engineered for global accessibility, supporting fluent English and Vietnamese interactions out of the box.
+- **☕ Professional Persona**: Custom-tuned "System Instructions" that hardcode cafe-specific knowledge, pricing, and a warm barista personality.
+- **⚡ Fluid UX/UI**: A premium cafe-themed interface built with **React** and **Tailwind CSS**, featuring smooth micro-animations powered by **Framer Motion**.
+
+---
+
+## 🏗️ System Architecture: The AI Conversation Flow
+
+The application orchestrates a high-speed data flow between the user's interface and Google's generative intelligence.
+
+```mermaid
+graph TD
+    subgraph "Frontend Interface (React)"
+        UI[Cafe-Themed UI]
+        FM[Framer Motion Animations]
+        State[Conversation State]
+    end
+
+    subgraph "Backend Engine (Node.js)"
+        API[Express REST API]
+        SEC[Environment Security]
+    end
+
+    subgraph "AI Core (Google)"
+        GEM[Gemini 2.5 Flash]
+        SYS[System Persona Logic]
+    end
+
+    %% Flow
+    UI --> State
+    State <-->|JSON Payload| API
+    API <-->|LLM Request| GEM
+    GEM --> SYS
+    API --> SEC
 ```
-cafe-chatbot-api/
-├── backend/                  # Node.js/Express API
-│   ├── src/
-│   │   ├── config/          # Configuration files
-│   │   │   └── gemini.js    # Gemini AI setup & system instructions
-│   │   ├── controllers/     # Business logic
-│   │   │   └── chatController.js
-│   │   ├── routes/          # API routes
-│   │   │   └── api.js
-│   │   └── server.js        # Entry point
-│   ├── .env                 # Environment variables (API keys)
-│   ├── package.json
-│   └── .gitignore
-├── frontend/                # React + Vite + Tailwind CSS
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   │   └── ChatInterface.jsx
-│   │   ├── hooks/           # Custom React hooks
-│   │   │   └── useChat.js
-│   │   ├── App.jsx
-│   │   └── index.css
-│   ├── package.json
-│   └── vite.config.js
-└── README.md                # This file
-```
 
-## ✨ Features
+---
 
-- 🌐 **Bilingual Support**: English and Vietnamese
-- 🎨 **Modern UI**: Premium cafe-themed design with Tailwind CSS
-- ⚡ **Real-time Chat**: Instant responses powered by Gemini 2.5 Flash
-- 📱 **Responsive Design**: Works on desktop and mobile
-- 🔒 **Secure**: API keys stored in environment variables
-- 🎯 **Context-Aware**: Maintains conversation history
+## ✨ Key Features & Technical Highlights
+
+- **🎙️ Natural Conversations**: Real-time response generation that feels human and helpful.
+- **📜 Smart Menu Knowledge**: Integrated product list (Espresso, Latte, Basque Cheesecake) with precise pricing.
+- **📍 Information Hub**: Instant access to opening hours, location details, and facility info (WiFi, seating).
+- **🎨 Premium Aesthetics**: A "Luxury-Zen" inspired design with a dark-theme option, optimized for mobile and desktop.
+- **🔐 Enterprise Security**: Robust handling of Google AI API keys using server-side environment architecture.
+- **📈 Motion Orchestration**: Seamless message transitions and loading states that improve perceived performance.
+
+---
+
+## 🛠️ Technology Stack
+
+- **AI Engine**: Google Generative AI (Gemini 2.5 Flash)
+- **Frontend**: React 18, Vite, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Security**: Dotenv + CORS Middleware
+
+---
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### 📦 Prerequisites
+- Node.js (v20+)
+- Google Gemini API Key
 
-- Node.js (v20 or higher)
-- npm or yarn
-- Google Gemini API Key ([Get one here](https://makersuite.google.com/app/apikey))
+### 🛠️ Installation & Setup
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   cd cafe-chatbot-api
-   ```
-
-2. **Setup Backend**
+1. **Clone & Install Backend**:
    ```bash
    cd backend
    npm install
    ```
 
-3. **Setup Frontend**
+2. **Clone & Install Frontend**:
    ```bash
    cd ../frontend
    npm install
    ```
 
-4. **Configure Environment Variables**
-   
-   Create a `.env` file in the `backend/` directory:
+3. **Configure API**:
+   Create `backend/.env`:
    ```env
-   GEMINI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_key_here
    PORT=3000
    ```
 
-### Running the Application
-
-**Option 1: Run both servers separately**
-
-Terminal 1 (Backend):
-```bash
-cd backend
-npm start
-# Server runs on http://localhost:3000
-```
-
-Terminal 2 (Frontend):
-```bash
-cd frontend
-npm run dev
-# App runs on http://localhost:5173
-```
-
-**Option 2: Development mode with auto-reload**
-
-Backend with auto-reload:
-```bash
-cd backend
-npm run dev
-```
-
-### Access the Application
-
-Open your browser and navigate to:
-```
-http://localhost:5173
-```
-
-## 🎯 API Endpoints
-
-### POST `/api/chat`
-
-Send a message to the chatbot.
-
-**Request Body:**
-```json
-{
-  "conversation": [
-    { "role": "user", "content": "Hello" },
-    { "role": "model", "content": "Hi! How can I help you?" },
-    { "role": "user", "content": "What's on the menu?" }
-  ]
-}
-```
-
-**Response:**
-```json
-{
-  "result": "Here's our menu: ☕ Espresso ($3), Latte ($4)..."
-}
-```
-
-### GET `/health`
-
-Check API health status.
-
-**Response:**
-```json
-{
-  "status": "OK",
-  "message": "Gemini Cafe API is running"
-}
-```
-
-## 🛠️ Tech Stack
-
-### Backend
-- **Node.js** - Runtime environment
-- **Express** - Web framework
-- **Google Generative AI** - Gemini API SDK
-- **dotenv** - Environment variables
-- **CORS** - Cross-origin resource sharing
-
-### Frontend
-- **React** - UI library
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
-- **Framer Motion** - Animations
-
-## 📝 Chatbot Capabilities
-
-The chatbot can help with:
-
-✅ **Café Information**
-- Opening hours (07:00 - 22:00 daily)
-- Location (123 AI Street, Tech City)
-- Facilities (Free WiFi, power outlets, seating)
-
-✅ **Menu & Pricing**
-- Coffee: Espresso ($3), Latte ($4), Cappuccino ($4)
-- Food: Croissant ($3), Cheesecake ($5)
-
-✅ **Recommendations**
-- Best sellers: Iced Spanish Latte, Basque Burnt Cheesecake
-
-✅ **Promotions**
-- Happy Hour: 2-5PM (20% off coffee)
-
-✅ **Reservations**
-- Contact: 0812-3456-7890
-
-## 🔒 Security Notes
-
-- Never commit `.env` files to version control
-- Keep your `GEMINI_API_KEY` secret
-- Use environment variables for sensitive data
-
-## 📄 License
-
-ISC
-
-## 👨‍💻 Development
-
-To contribute or modify:
-
-1. Backend changes: Edit files in `backend/src/`
-2. Frontend changes: Edit files in `frontend/src/`
-3. Test thoroughly before deploying
+4. **Launch Ecosystem**:
+   Run `npm start` in the backend and `npm run dev` in the frontend.
 
 ---
 
-Made with ☕ and 🤖 by Gemini Cafe Team
+## 📂 Project Structure
+
+```
+├── backend/            # Express API & Gemini Orchestration
+│   └── src/config/     # LLM Persona & System Logic
+├── frontend/           # React SPA & Tailwind Design
+│   └── src/components/ # Interactive Chat Components
+└── README.md           # Master Documentation
+```
+
+---
+
+## 👨‍💻 Author
+
+**Fitry Yuliani**
+*Engineering Intelligence. Brewing Innovation.*
+
+---
+
+<p align="center">
+  <strong>Transforming the Digital Cafe Experience, One Prompt at a Time. 🤖☕🚀</strong>
+</p>
